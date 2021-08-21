@@ -24,7 +24,7 @@ class LandingpageController extends Controller
                 'phone'     => $r->phone,
                 'content'   => $r->content,
             );
-            Mail::to($data['email'])->send(new SendMailAdmin($data));
+            Mail::to('nhathuocphongnhi@gmail.com')->send(new SendMailAdmin($data));
             return redirect()->route('index')->with('success', 'Gửi Mail Thành Công');
         } catch (Exception $e) {
             return redirect()->back()->with(['error'=>'Có Vẻ Như Bạn Đã Gặp Lổi, Vui Lòng Thử Lại']);
