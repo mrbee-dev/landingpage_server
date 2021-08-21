@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{asset('landingpage/css/textRotate.css')}}" />
   <link rel="stylesheet" href="{{asset('landingpage/css/select2.min.css')}}" />
   <link rel="stylesheet" href="{{asset('landingpage/css/style.css')}}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="st-perloader">
@@ -82,32 +83,59 @@
               <br> đại học sẻ luôn sẵn sàng giúp đở bạn
             </div>
           </div>
-          <form method="POST" action="#" class="st-appointment-form">
+          <form method="POST" action="{{ route('send.mail') }}" class="st-appointment-form">
+            @csrf
             <div class="st-wave-animation st-white"></div>
+            @if(session()->has('success'))
+            <div  id="message"  class="alert alert-success" style="text-align:center">
+                {{ session()->get('success') }}
+            </div>
+            @endif
+            @if(session()->has('error'))
+            <div  id="message"  class="alert alert-danger" style="text-align:center">
+                {{ session()->get('error') }}
+            </div>
+            @endif
             <h2 class="st-appointment-form-title text-center" style="margin-bottom: 0px;">Yêu Cầu Tư Vấn Mua Thuốc</h2>
             <p style="text-align:center">( Chúng Tôi Sẻ Liên Hệ Sớm Nhất Tới Bạn )</p>
             <div id="st-alert1"></div>
             <div class="row">
               <div class="col-lg-12">
                 <div class="st-form-field st-style1">
-                  <input type="text" name="fullname" placeholder="Họ Tên">
+                  <input type="text" name="fullname" placeholder="Họ Tên" value="{{old('fullname')}}">
+                  @if ($errors->has('fullname'))
+                  <p class="required" style="color: red;">{{ $errors->first('fullname') }}</p> 
+                  @endif
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="st-form-field st-style1">
-                  <input type="text"  name="phone" placeholder="Số Điện Thoại" >
+                  <input type="text"  name="email" placeholder="Email" value="{{old('email')}}">
+                  @if ($errors->has('email'))
+                  <p class="required" style="color: red;">{{ $errors->first('email') }}</p> 
+                  @endif
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="st-form-field st-style1">
-                  <textarea cols="30" rows="10" name="content" placeholder="Nhập Nội Dung"></textarea>
+                  <input type="number"  name="phone" placeholder="Số Điện Thoại" value="{{old('phone')}}">
+                  @if ($errors->has('phone'))
+                  <p class="required" style="color: red;">{{ $errors->first('phone') }}</p> 
+                  @endif
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="st-form-field st-style1">
+                  <textarea cols="30" rows="10" name="content" placeholder="Nhập Nội Dung">{{ old('content') }}</textarea>
+                  @if ($errors->has('content'))
+                  <p class="required" style="color: red;">{{ $errors->first('content') }}</p> 
+                  @endif
                 </div>
               </div>
               <div class="col-lg-12">
                 <button 
                 class="st-btn st-style1 st-color1 st-size-medium w-100" 
-                type="submit" id="appointment-submit" 
-                name="submit">Gửi Yêu Cầu</button>
+                type="submit" id="appointment-submit">Gửi Yêu Cầu</button>
               </div>
             </div>
           </form> 
@@ -291,6 +319,13 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
+  <script>
+    $("document").ready(function(){
+        setTimeout(function(){
+            $("#message").remove();
+        }, 3500 );
+    });
+</script>
   <script src="{{asset('landingpage/js/vendor/modernizr-3.5.0.min.js')}}"></script>
   <script src="{{asset('landingpage/js/vendor/jquery-1.12.4.min.js')}}"></script>
   <script src="{{asset('landingpage/js/isotope.pkg.min.js')}}"></script>
