@@ -14,4 +14,4 @@ use App\Http\Controllers\LandingpageController;
 */
 
 Route::get('/', [LandingpageController::class, 'showIndex'])->name('index');
-Route::post('sendMail/', [LandingpageController::class, 'sendMail'])->name('send.mail');
+Route::post('/', [LandingpageController::class, 'sendMail'])->name('send.mail');
