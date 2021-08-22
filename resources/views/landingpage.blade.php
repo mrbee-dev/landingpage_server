@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="">
   <title>Nhà Thuốc Phong Nhi</title>
-  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="icon" href="{{asset('landingpage/img/favicon.png')}}" />
   <link rel="stylesheet" href="{{asset('landingpage/css/bootstrap.min.css')}}" />
   <link rel="stylesheet" href="{{asset('landingpage/css/fontawesome.css')}}" />
   <link rel="stylesheet" href="{{asset('landingpage/css/slick.css')}}" />
@@ -53,7 +53,7 @@
       <div class="container">
         <div class="st-main-header-in">
           <div class="st-main-header-left">
-            <a class="st-site-branding" href="index.html">
+            <a class="st-site-branding" href="{{route('index')}}">
               <img src="{{asset('landingpage/img/logo.png')}}" alt="Nischinto" width="164px">
             </a>
           </div>
