@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +17,4 @@ use App\Http\Controllers\LandingpageController;
 
 Route::get('/', [LandingpageController::class, 'showIndex'])->name('index');
 Route::post('/', [LandingpageController::class, 'sendMail'])->name('send.mail');
+Route::get('/my-admin-nha-thuoc-phong-nhi-060798-220597', [AdminController::class, 'index'])->name('index');
