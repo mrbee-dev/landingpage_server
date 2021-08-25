@@ -39,7 +39,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Hoạt Động</th>
+                                    <th scope="col">STT</th>
                                     <th scope="col">Họ Tên</th>
                                     {{-- <th scope="col">Email</th> --}}
                                     <th scope="col">Phone</th>
@@ -47,9 +47,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1 ?>
                                 @foreach ($data as $item)
                                 <tr>
-                                    <th><input type="checkbox" name="" id=""></th>
+                                    <th>{{ $i++ }}</th>
                                     <th>{{ $item->fullname }}</th>
                                     {{-- <td>{{ $item->email }}</td> --}}
                                     <td><a href="tel:{{ $item->phone }}">{{ $item->phone }}</a></td>
