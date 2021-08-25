@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $data   = DB::table('landingpage')->get();
+        $data   = DB::table('landingpage')->orderBy('id', 'DESC')->get();
         return view('admin', compact('data'));
     }
 }

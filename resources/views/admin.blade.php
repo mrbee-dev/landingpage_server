@@ -35,7 +35,7 @@
             <div class="col-12">
                 <div class="col-lg-12" style="padding: 30px 0px">
                     <p style="text-align: center; font-size: 20px;">Danh Sách Khách Mua Hàng</p>
-                    <div class="scroll-table" style="overflow:auto; height: 300px;">
+                    <div class="scroll-table">
                         <table class="table">
                             <thead>
                                 <tr>
