@@ -55,7 +55,7 @@
                                     {{-- <td>{{ $item->email }}</td> --}}
                                     <td><a href="tel:{{ $item->phone }}">{{ $item->phone }}</a></td>
                                     <td>{{ $item->content }}</td>
-                                    <td><td>{{Str::limit($item->created_at, 16, '')}}</td></td>
+                                    <td>{{Str::limit($item->created_at, 16, '')}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
