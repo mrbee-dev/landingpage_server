@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="col-lg-12" style="padding: 30px 0px">
+                <div class="col-lg-12" style="margin: 30px 0px">
                     <p style="text-align: center; font-size: 20px;">Danh Sách Khách Mua Hàng</p>
                     <div class="scroll-table">
                         <table class="table">
