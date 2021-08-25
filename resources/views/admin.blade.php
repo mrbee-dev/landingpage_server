@@ -92,36 +92,6 @@
             </div>
         </div>
     </div>
-  <!-- Messenger Plugin chat Code -->
-  <div id="fb-root"></div>
-  <!-- Your Plugin chat code -->
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
-  <script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "105771718250084");
-    chatbox.setAttribute("attribution", "biz_inbox");
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml            : true,
-        version          : 'v11.0'
-      });
-    };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <script>
-    $("document").ready(function(){
-        setTimeout(function(){
-            $("#message").remove();
-        }, 3500 );
-    });
-</script>
   <script src="{{asset('landingpage/js/vendor/modernizr-3.5.0.min.js')}}"></script>
   <script src="{{asset('landingpage/js/vendor/jquery-1.12.4.min.js')}}"></script>
   <script src="{{asset('landingpage/js/isotope.pkg.min.js')}}"></script>
