@@ -44,7 +44,6 @@
                                     {{-- <th scope="col">Email</th> --}}
                                     <th scope="col">Phone</th>
                                     <th scope="col">Yêu Cầu</th>
-                                    <th scope="col">Thời Gian</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,7 +54,6 @@
                                     {{-- <td>{{ $item->email }}</td> --}}
                                     <td><a href="tel:{{ $item->phone }}">{{ $item->phone }}</a></td>
                                     <td>{{ $item->content }}</td>
-                                    <td>{{Str::limit($item->created_at, 16, '')}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
