@@ -17,4 +17,4 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [LandingpageController::class, 'showIndex'])->name('index');
 Route::post('/', [LandingpageController::class, 'sendMail'])->name('send.mail');
-Route::get('/my-admin-nha-thuoc-phong-nhi-060798-220597', [AdminController::class, 'index'])->name('index');
+Route::get('/my-admin-nha-thuoc-phong-nhi-060798-220597', [AdminController::class, 'index'])->name('admin.index');
